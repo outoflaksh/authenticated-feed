@@ -24,11 +24,11 @@ def get_user(username: str, db):
     return None
 
 
-def verify_user(form_data, db):
-    user = get_user(form_data.username, db)
+def verify_user(username, password, db):
+    user = get_user(username, db)
 
     if user:
-        password_input = form_data.password
+        password_input = password
         hashed_password = user.hashed_password
 
         if verify_hash(password_input, hashed_password):
