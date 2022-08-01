@@ -17,8 +17,9 @@
 
     <a href="/logout">Logout</a>
     <script>
+        const host = location.origin.replace(/^http/, 'ws');
         var client_id = document.querySelector("#ws-id").textContent
-        var ws = new WebSocket(`ws://auth-feed.herokuapp.com/ws/${client_id}`);
+        var ws = new WebSocket(`${host}/ws/${client_id}`);
         ws.onmessage = function (event) {
             var messages = document.getElementById('messages')
             var message = document.createElement('li')
