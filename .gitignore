@@ -7,3 +7,6 @@ __pycache__
 # Environment vars
 /*.env 
 
+# Config
+.vscode
+.deta
